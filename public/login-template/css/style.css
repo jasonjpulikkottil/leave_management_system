@@ -1,0 +1,280 @@
+/* ===================================== Basic CSS ================================== */
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: #444;
+}
+
+a:hover {
+  color: #444;
+}
+
+ul {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+a:hover,
+a:focus,
+input,
+textarea {
+  text-decoration: none;
+  outline: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.cp {
+  cursor: pointer;
+}
+
+html, body {
+  height: 100%;
+}
+
+p {
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.hid {
+  display: none;
+}
+
+.top-mar {
+  margin-top: 15px;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+::placeholder {
+  color: #747f8a !important;
+  font-size: 13px;
+  opacity: .5 !important;
+}
+
+.container-fluid {
+  padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "mouse-500", Arial, Helvetica, sans-serif;
+}
+
+strong {
+  font-family: "mouse-500", Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f7f7ff !important;
+  font-family: "mouse-300", Arial, Helvetica, sans-serif;
+  color: #6A6A6A;
+}
+
+.btn-login {
+  background-color: #56509f;
+  border-color: #56509f;
+  color: #fff;
+}
+
+.btn-login:hover {
+  background-color: #56509f !important;
+  border-color: #56509f !important;
+}
+
+.btn-login:active {
+  background-color: #56509f !important;
+  border-color: #56509f !important;
+}
+
+.btn-login:focus {
+  background-color: #56509f !important;
+  border-color: #56509f !important;
+  box-shadow: none !important;
+}
+
+.btn {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  border: 2px solid #00a8df;
+}
+
+.btn-light {
+  background-color: #FFF;
+  color: #3F3F3F;
+}
+
+.collapse.show {
+  display: block !important;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border: 1px solid #56509f !important;
+}
+
+.form-control {
+  background-color: #F8F8F8;
+  margin-bottom: 20px;
+}
+
+.form-control:focus {
+  background-color: #FFF;
+  border-color: #CCC;
+}
+
+.container {
+  max-width: 1100px;
+}
+
+@media screen and (max-width: 575px) {
+  .container {
+    padding: 20px 30px;
+  }
+}
+
+/* ===================================== Header CSS ================================== */
+.login-box {
+  background-color: #FFF;
+  float: none;
+  margin: auto;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  margin-top: 8%;
+}
+
+@media screen and (max-width: 575px) {
+  .login-box {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .login-box {
+    margin-bottom: 60px;
+  }
+}
+
+.log-det {
+  padding: 20px;
+}
+
+.log-det img {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 100px;
+}
+
+.log-det h2 {
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.log-det ul {
+  float: none;
+  margin: auto;
+  width: 200px;
+}
+
+.log-det ul li {
+  float: left;
+  padding: 10px;
+}
+
+.log-det ul li i {
+  padding: 10px;
+  border: 1px solid #CCC;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50px;
+}
+
+.log-det .text-box-cont {
+  padding-top: 10px;
+  max-width: 300px;
+  float: none;
+  margin: auto;
+}
+
+.log-det .text-box-cont .input-group .input-group-prepend span {
+  background-color: #F8F8F8;
+  border-radius: 0px;
+  border-right: 0px;
+}
+
+.log-det .text-box-cont .input-group .input-group-prepend i {
+  color: #777474;
+}
+
+.log-det .text-box-cont .input-group input {
+  border-left: 0px;
+  border-radius: 0px;
+}
+
+.log-det .text-box-cont .btn {
+  border-radius: 50px;
+  padding: 10px 30px;
+  margin: auto;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.form-check-label{
+font-size: 18px;
+color: #777474;
+}
+
+.box-de {
+  background-color: #F8F8F8;
+  display: flex;
+}
+
+.box-de .ditk-inf {
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  color: #FFF;
+}
+
+@media screen and (max-width: 767px) {
+  .box-de {
+    padding: 30px;
+  }
+}
