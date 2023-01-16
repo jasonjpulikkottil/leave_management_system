@@ -20,7 +20,7 @@ This management system is written in Laravel framework. The database is written 
 
 #### Step 1:
 - Create an empty database in the MySQL with the name of **dsa_leave_management**
-
+- Import dsa_leave_management.sql in phpMyAdmin
 
 #### Step 2:
 
