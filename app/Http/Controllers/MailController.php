@@ -12,8 +12,8 @@ class MailController extends Controller
   public function index()
   {
     $data = [
-      "subject"=>"Cambo Tutorial Mail",
-      "body"=>"Hello friends, Welcome to Cambo Tutorial Mail Delivery!"
+      "subject"=>"Leave Update",
+      "body"=>"Leave"
       ];
     // MailNotify class that is extend from Mailable class.
     try
