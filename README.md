@@ -130,10 +130,3 @@ This staff setting module is the place where the staff password and username cou
 #### Features
 - Change username of admin
 - Change password of admin
-
-
-<<<<<<< Updated upstream
-![](github-readme-content/staff-settings.jpg)
-=======
->>>>>>> Stashed changes
-
