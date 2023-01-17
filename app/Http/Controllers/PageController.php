@@ -18,14 +18,13 @@ class PageController extends Controller
 
        $session_type = Session::get('Session_Type');
        $session_value = Session::get('Session_Value');
-
        
 
        if($session_type == "Admin"){
 
          $pending_data = DB::select("SELECT leave_data.*, staff_data.firstname, staff_data.lastname FROM leave_data, staff_data WHERE staff_data.staff_id = leave_data.staff_id AND leave_data.approval_status = '[PENDING]' ORDER BY leave_data.date_of_request ASC"); // SQL-CODE
 
-
+         
          return view("admin-dashboard-content/home-page")->with("pending_data", $pending_data);
 
        }else if($session_type == "Staff"){

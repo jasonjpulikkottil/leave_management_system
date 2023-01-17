@@ -23,6 +23,7 @@ use App\Http\Controllers\MailController;
 Route::get('/',[PageController::class, 'ViewLoginPageController']);
 
 
+
 Route::get('/sendmail', [MailController::class, 'index']);
 
 Route::post('/handle-login',[LoginController::class, 'HandleLoginContoller']);

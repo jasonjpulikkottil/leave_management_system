@@ -101,7 +101,7 @@
 <div class="card">
       <div class="card-body">
 
-          <table class="table table-bordered table-hover table-dark">
+          <table class="table table-bordered table-hover">
               <thead>
                 <tr>
                   <th scope="col">#</th>
