@@ -260,14 +260,14 @@ $val=$totalleave-count($leave_data)
 
       @foreach ($leave_data as $key => $data)
 
-          <div class="card text-white bg-dark mb-3">
+          <div class="card mb-3">
             @if($data->approval_status =="[ACCEPTED]")
-              <div class="card-header bg-success">
+              <div class="card-header ">
                 <strong>{{$data->date_of_leave}} (Accepted)</strong>
                 <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
               </div>
             @elseif($data->approval_status =="[DECLINED]")
-              <div class="card-header bg-danger">
+              <div class="card-header">
                 <strong>{{$data->date_of_leave}} (Declined)</strong>
                 <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
               </div>

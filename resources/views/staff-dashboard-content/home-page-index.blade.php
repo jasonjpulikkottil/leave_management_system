@@ -84,8 +84,8 @@ $val=$totalleave-count($leave_data)
       
       @foreach ($leave_pending_data as $key => $data)
 
-          <div class="card text-white bg-dark mb-3">
-            <div class="card-header bg-dark ">
+          <div class="card  mb-3">
+            <div class="card-header ">
               <strong>{{$data->date_of_leave}}</strong>
               <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
             </div>
@@ -234,8 +234,8 @@ $val=$totalleave-count($leave_data)
 
 
 
-          <div class="card text-white bg-dark mb-3">
-            <div class="card-header bg-dark ">
+          <div class="card mb-3">
+            <div class="card-header  ">
               <strong>{{$data->date_of_leave}}</strong>
               <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
             </div>
