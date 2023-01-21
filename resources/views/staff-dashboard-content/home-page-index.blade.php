@@ -242,13 +242,15 @@ $val=$totalleave-count($leave_data)
             <div class="card-body">
               <!--h5 class="card-title">{{$data->type_of_leave}}</h5-->
 
-             @if($data->type_of_leave=="1")
-             Sick Leave
-             @elseif($data->type_of_leave=="2")
-             Casual Leave
-             @endif
+            
 
-              <p class="card-text">{{$data->description}}</p>
+              @foreach($leave_type as $keyy=>$object)
+             @if($keyy == $data->type_of_leave-2) 
+             {{ $object->leave_type_name }}
+             @endif
+              @endforeach
+
+
               <a class="btn btn-danger float-right confirmation" href="/delete-leave-pending-request-in-staff-account/{{$data->auto_id}}">Delete Request</a>
             </div>
           </div>

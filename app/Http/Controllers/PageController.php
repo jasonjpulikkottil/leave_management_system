@@ -23,9 +23,14 @@ class PageController extends Controller
        if($session_type == "Admin"){
 
          $pending_data = DB::select("SELECT leave_data.*, staff_data.firstname, staff_data.lastname FROM leave_data, staff_data WHERE staff_data.staff_id = leave_data.staff_id AND leave_data.approval_status = '[PENDING]' ORDER BY leave_data.date_of_request ASC"); // SQL-CODE
+        
+         $leave_type=DB::table('leave_type')->value('leave_type_name'); 
 
-         
-         return view("admin-dashboard-content/home-page")->with("pending_data", $pending_data);
+         $leave_type =DB::table('leave_type')->groupBy('leave_type_name')->select('leave_type_name', \DB::raw('COUNT(*) as cnt'))->get(); 
+        
+      
+
+         return view("admin-dashboard-content/home-page")->with(["pending_data"=> $pending_data,"leave_type"=>$leave_type]);
 
        }else if($session_type == "Staff"){
         

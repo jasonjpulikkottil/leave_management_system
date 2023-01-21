@@ -60,15 +60,6 @@
 </div>
 </div>
 
-<div class="user-notification-block align-right d-inline-block">
-<ul class="list-inline m-0">
-<li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Apply Leave">
-<a href="leave.html" class="font-23 menu-style text-white align-middle">
-<span class="lnr lnr-briefcase position-relative"></span>
-</a>
-</li>
-</ul>
-</div>
 
 
 <div class="user-info align-right dropdown d-inline-block header-dropdown">
@@ -79,7 +70,7 @@
 </a>
 
 <div class="dropdown-menu notification-dropdown-menu shadow-lg border-0 p-3 m-0 dropdown-menu-right">
-<a class="dropdown-item p-2" href="details.html">
+<a class="dropdown-item p-2" href="/view-home-page">
 <span class="media align-items-center">
 <span class="lnr lnr-user mr-3"></span>
 <span class="media-body text-truncate">
@@ -277,9 +268,11 @@
 <div class="card ctm-border-radius shadow-sm border-none grow">
 <div class="card-body">
 <div class="row no-gutters">
+	
 <div class="col-6 align-items-center  text-center">
 <a href="/view-home-page" class="{{Request::path()==='view-home-page'?'text-white active':'text-dark'}} p-4 first-slider-btn ctm-border-right ctm-border-left ctm-border-top"><span class="lnr lnr-home pr-0 pb-lg-2 font-23"></span><span class="">Homepage</span></a>
 </div>
+
 <div class="col-6 align-items-center shadow-none text-center">
 <a href="/view-staff-management-index" class="{{Request::path()==='view-staff-management-index'?'text-white active':'text-dark'}}  p-4 second-slider-btn ctm-border-right ctm-border-top"><span class="lnr lnr-users pr-0 pb-lg-2 font-23"></span><span class="">Staff Management</span></a>
 </div>
@@ -290,10 +283,10 @@
 <a href="/view-user-accounts-index" class="{{Request::path()==='view-user-accounts-index'?'text-white active':'text-dark'}} p-4 ctm-border-right"><span class="lnr lnr-calendar-full pr-0 pb-lg-2 font-23"></span><span class="">User Accounts</span></a>
 </div>
 <div class="col-6 align-items-center shadow-none text-center">
-<a href="/view-settings-index" class="{{Request::path()==='view-settings-index'?'text-white active':'text-dark'}}  p-4 ctm-border-right ctm-border-left"><span class="lnr lnr-briefcase pr-0 pb-lg-2 font-23"></span><span class="">Settings</span></a>
+<a href="/view-settings-index" class="{{Request::path()==='view-settings-index'?'text-white active':'text-dark'}}  p-4 ctm-border-right ctm-border-left"><span class="lnr lnr-cog pr-0 pb-lg-2 font-23"></span><span class="">Settings</span></a>
 </div>
 <div class="col-6 align-items-center shadow-none text-center">
-<a href="/handle-logout" class="{{Request::path()==='handle-logout'?'text-white active':'text-dark'}}  p-4 last-slider-btn ctm-border-right"><span class="lnr lnr-star pr-0 pb-lg-2 font-23"></span><span class="">Logout</span></a>
+<a href="/handle-logout" class="{{Request::path()==='handle-logout'?'text-white active':'text-dark'}}  p-4 last-slider-btn ctm-border-right"><span class="lnr lnr-power-switch pr-0 pb-lg-2 font-23"></span><span class="">Logout</span></a>
 
 </div>
 </div>

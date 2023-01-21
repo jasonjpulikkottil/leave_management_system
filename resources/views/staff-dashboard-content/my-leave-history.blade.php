@@ -276,12 +276,12 @@ $val=$totalleave-count($leave_data)
             <div class="card-body">
               <!--h5 class="card-title">Leave Type ID: {{$data->type_of_leave}}<h5-->
              
-              @if($data->type_of_leave=="1")
-             Sick Leave
-             @elseif($data->type_of_leave=="2")
-             Casual Leave
+
+              @foreach($leave_type as $keyy=>$object)
+             @if($keyy == $data->type_of_leave-2) 
+             {{ $object->leave_type_name }}
              @endif
-              <p class="card-text">{{$data->description}}</p>
+              @endforeach
             </div>
           </div>
 

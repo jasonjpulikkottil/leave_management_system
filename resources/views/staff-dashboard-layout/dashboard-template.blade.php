@@ -64,7 +64,7 @@
 <div class="user-notification-block align-right d-inline-block">
 <ul class="list-inline m-0">
 <li class="list-inline-item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Apply Leave">
-<a href="leave.html" class="font-23 menu-style text-white align-middle">
+<a href="/view-home-page-of-staff-account" class="font-23 menu-style text-white align-middle">
 <span class="lnr lnr-briefcase position-relative"></span>
 </a>
 </li>
@@ -288,10 +288,10 @@
 
 
 <div class="col-6 align-items-center shadow-none text-center">
-<a href="/view-settings-index-of-staff-account" class="{{Request::path()==='view-settings-index-of-staff-account'?'text-white active':'text-dark'}} p-4 ctm-border-right ctm-border-left"><span class="lnr lnr-briefcase pr-0 pb-lg-2 font-23"></span><span class="">Settings</span></a>
+<a href="/view-settings-index-of-staff-account" class="{{Request::path()==='view-settings-index-of-staff-account'?'text-white active':'text-dark'}} p-4 ctm-border-right ctm-border-left"><span class="lnr lnr-cog pr-0 pb-lg-2 font-23"></span><span class="">Settings</span></a>
 </div>
 <div class="col-6 align-items-center shadow-none text-center">
-<a href="/handle-logout" class="{{Request::path()==='handle-logout'?'text-white active':'text-dark'}} p-4 last-slider-btn ctm-border-right"><span class="lnr lnr-star pr-0 pb-lg-2 font-23"></span><span class="">Logout</span></a>
+<a href="/handle-logout" class="{{Request::path()==='handle-logout'?'text-white active':'text-dark'}} p-4 last-slider-btn ctm-border-right"><span class="lnr lnr-power-switch pr-0 pb-lg-2 font-23"></span><span class="">Logout</span></a>
 </div>
 </div>
 </div>

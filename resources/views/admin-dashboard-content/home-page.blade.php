@@ -18,7 +18,7 @@
               <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
             </div>
             <div class="card-body">
-              <!--h5 class="card-title">{{$data->type_of_leave}}<h5-->
+              <!--h5 class="card-title">{{$data->type_of_leave}}
 
               
              @if($data->type_of_leave=="1")
@@ -26,8 +26,16 @@
              @elseif($data->type_of_leave=="2")
              Casual Leave
              @endif
-              <p class="card-text">{{$data->description}}</p>
+            <h5-->
 
+
+             @foreach($leave_type as $keyy=>$object)
+             @if($keyy == $data->type_of_leave-2) 
+             {{ $object->leave_type_name }}
+             @endif
+              @endforeach
+
+             
               <a style="margin-left:10px;" class="btn btn-danger  float-right " href="/decline-request/{{$data->auto_id}}">Decline</a>
               <a class="btn btn-primary float-right" href="/accept-request/{{$data->auto_id}}">Accept</a>
 
