@@ -267,7 +267,6 @@ $val=$totalleave-count($leave_data)
 @endsection
 @endif
 
-}
 
 
 <script>
