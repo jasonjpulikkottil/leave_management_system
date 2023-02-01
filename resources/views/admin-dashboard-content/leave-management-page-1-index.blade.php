@@ -238,6 +238,51 @@
 
 <div class="card">
     <div class="card-body">
+      <h3 class="panel-title" style="text-align:center;">Add Leave Type</h3>
+<br>
+
+
+      <form action="/add-leave-type" method="POST">
+          {{ csrf_field() }}
+          <div class="form-row">
+
+            <div class="col-md-4 mb-3">
+              
+              <label for="ltype">Input Leave Type Name:</label>
+              <input class="form-control" type="text" id="ltype" name="ltype">
+
+      </div>
+
+      <div class="col-md-4 mb-3">
+              
+              <label for="lcount">Leave Count:</label>
+              <input  class="form-control" type="number" id="lcount" name="lcount">
+
+      </div>
+
+      <div class="col-md-4 mb-3">
+              
+              <label for="ltype">From Date:</label>
+              <input  class="form-control" type="date" id="lfrom" name="lfrom">
+
+      </div>
+      <div class="col-md-4 mb-3">
+              
+              <label for="ltype">To Date:</label>
+              <input  class="form-control" type="date" id="lto" name="lto">
+
+      </div>
+
+      </div>
+
+      <input class="btn btn-primary float-right" value="Add" type="submit">
+
+
+      </div>
+      </div>
+
+<div class="card">
+    <div class="card-body">
       <h3 class="panel-title" style="text-align:center;">My Leave History</h3>
 
       <!--h4>Number of Leaves: <span style="text-weight:bold; color:blue;">{{count($leave_data)}}</span> </h4-->

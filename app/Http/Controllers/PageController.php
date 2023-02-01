@@ -8,6 +8,9 @@ use DB;
 
 class PageController extends Controller
 {
+
+
+
   public function ViewLoginPageController(){
 
       return view("login-page");

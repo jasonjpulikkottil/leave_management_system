@@ -81,13 +81,13 @@
 <input class="form-control" type="password" placeholder="Password" name="password" required>
 </div>
 
-<div class="form-group">
+<!--div class="form-group">
 <input type="radio" name="login_type" id="login_type_admin" value="admin">
                 <label for="inlineRadio1">Admin Login</label>
 
                 <input type="radio" name="login_type" id="login_type_staff" value="staff">
                                     <label for="inlineRadio2">Staff Login</label>
-</div>
+</div-->
 
 <div class="form-group">
 <button class="btn btn-theme button-1 text-white ctm-border-radius btn-block" type="submit" value="Login" >Login</button>

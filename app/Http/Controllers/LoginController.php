@@ -13,12 +13,12 @@ class LoginController extends Controller
         $this->validate($request, [
           'username' => 'required',
           'password' => 'required',
-          'login_type' => 'required',
+         // 'login_type' => 'required',
         ]);
 
         $user_entered_username    =    $request->username;
         $user_entered_password    =    $request->password;
-        $user_entered_login_type  =    $request->login_type;
+       // $user_entered_login_type  =    $request->login_type;
 
 
         $real_staff_id      = "";
@@ -26,7 +26,8 @@ class LoginController extends Controller
         $real_password      = "";
         $real_account_type  = "";
 
-        $user = DB::select( DB::raw("SELECT staff_id,username, password,account_type FROM user_account WHERE username ='$user_entered_username' AND account_type='$user_entered_login_type'"));
+        //$user = DB::select( DB::raw("SELECT staff_id,username, password,account_type FROM user_account WHERE username ='$user_entered_username' AND account_type='$user_entered_login_type'"));
+        $user = DB::select( DB::raw("SELECT staff_id,username, password,account_type FROM user_account WHERE username ='$user_entered_username'"));
 
         foreach($user as $u){
 

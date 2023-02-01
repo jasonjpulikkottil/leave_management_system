@@ -22,10 +22,6 @@ use App\Http\Controllers\MailController;
 
 Route::get('/',[PageController::class, 'ViewLoginPageController']);
 
-
-
-Route::get('/sendmail', [MailController::class, 'index']);
-
 Route::post('/handle-login',[LoginController::class, 'HandleLoginContoller']);
 
 Route::get('/view-home-page',[PageController::class, 'ViewHomePageController']);
@@ -83,5 +79,15 @@ Route::get('/delete-leave-pending-request-in-staff-account/{auto_id}',[DatabaseC
 Route::get('/view-my-leave-history-of-staff-account',[PageController::class, 'ViewMyLeaveHistoryPageOfStaffAccountController']);
 
 Route::post('/filter-search-leave-history-of-staff-account',[PageController::class, 'FilterSearchLeaveHistoryPageOfStaffAccountController']);
+
+
+
+
+
+
+
+Route::get('/sendmail', [MailController::class, 'index']);
+
+Route::post('/add-leave-type',[DatabaseController::class, 'AddLeaveType']);
 
 ?>

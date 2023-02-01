@@ -8,6 +8,45 @@ use DB;
 
 class DatabaseController extends Controller
 {
+
+  public function AddLeaveType(Request $request){
+    
+    $session_type = Session::get('Session_Type');
+    $session_value = Session::get('Session_Value');
+
+    if($session_type == "Admin"){
+
+      $this->validate($request, [
+        'ltype' => 'required',
+        'lcount' => 'required',
+        'lfrom' => 'required',
+        'lto' => 'required',
+      ]);
+      $ltype       = $request->ltype;
+      $lcount      = $request->lcount;
+      $lfrom      = $request->lfrom;
+      $lto       = $request->lto;
+      
+      if (DB::table('leave_type')->where('leave_type_name', $ltype)->doesntExist()) {
+
+        if(DB::insert('INSERT INTO leave_type (leave_type_name, count, from_date, to_date, active) values (?, ?, ?, ?, ?)', [ $ltype , $lcount , $lfrom , $lto ,1])){
+
+            return redirect()->back()->with('message', 'Operation Successful.');
+
+        }
+
+      }else{
+        return redirect()->back()->withErrors("<strong>Unable to register:</strong> The given leave type already exists in the database");
+      }
+
+    }
+    return view("login-page");
+
+  }
+
+
+
+
     public function InsertStaffData(Request $request){
 
       $session_type = Session::get('Session_Type');
@@ -460,7 +499,17 @@ class DatabaseController extends Controller
 
       }
 
+
+
+
+
+
   }
+
+
+
+
+
 
 
 }
