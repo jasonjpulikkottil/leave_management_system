@@ -76,6 +76,12 @@ $val=$totalleave-count($leave_data)
 <h4>Number of Leaves Remaining: <span style="text-weight:bold; color:blue;">{!!$val!!}</span> </h4>
 <h4>You have No Leaves Remaining </h4>
 
+
+
+
+
+
+
 <div class="card">
     <div class="card-body">
       <h3 class="panel-title" style="text-align:center;">My Pending Requests</h3>
@@ -175,15 +181,30 @@ $val=$totalleave-count($leave_data)
         <div class="form-group row">
           <label for="type_of_leave" class="col-sm-2 col-form-label">Type of Leave</label>
           <div class="col-sm-8">
-            <select class="form-control" name = "type_of_leave" id="type_of_leave" aria-label="Default select example" required>
+          <select class="form-control" name="type_of_leave" id="type_of_leave" aria-label="Default select example" required>
+      <option selected disabled>Select a Leave Type</option>
+      @foreach($leave_type as $key =>$data)
 
-            @foreach($leave_type as $key => $data)
-            <option>{{$data->leave_type_name}}</option>    
-          @endforeach
+      <option  style="color:black" > {{$data->leave_type_name}}
+      
+      @php($var=$data->count)
+      @foreach($leave_count as $keyy=>$object)
+      @if(($data->id)== $object->type_of_leave) 
+      @php($var=($data->count)-($object->total))
+       @endif
+      @endforeach
 
-
+      <optgroup label="Remaining : {{$var}}" 
+      
+      
+      style="color:green"></optgroup>
+        <optgroup label="Total : {{$data->count}}" style="color:red" </optgroup>
+      </option>
+      @endforeach
+      
 
             </select>
+         
           </div>
         </div>
 
@@ -245,7 +266,7 @@ $val=$totalleave-count($leave_data)
             
 
               @foreach($leave_type as $keyy=>$object)
-             @if($keyy == $data->type_of_leave-2) 
+             @if($keyy == $data->type_of_leave-1) 
              {{ $object->leave_type_name }}
              @endif
               @endforeach

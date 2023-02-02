@@ -18,19 +18,11 @@
               <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
             </div>
             <div class="card-body">
-              <!--h5 class="card-title">{{$data->type_of_leave}}
-
-              
-             @if($data->type_of_leave=="1")
-             Sick Leave
-             @elseif($data->type_of_leave=="2")
-             Casual Leave
-             @endif
-            <h5-->
-
+            
 
              @foreach($leave_type as $keyy=>$object)
-             @if($keyy == $data->type_of_leave-2) 
+            
+             @if($object->id== $data->type_of_leave) 
              {{ $object->leave_type_name }}
              @endif
               @endforeach

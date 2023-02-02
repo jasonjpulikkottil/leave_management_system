@@ -29,7 +29,7 @@ class PageController extends Controller
         
          $leave_type=DB::table('leave_type')->value('leave_type_name'); 
 
-         $leave_type =DB::table('leave_type')->groupBy('leave_type_name')->select('leave_type_name', \DB::raw('COUNT(*) as cnt'))->get(); 
+         $leave_type =DB::table('leave_type')->groupBy('leave_type_name','id')->select('id','leave_type_name', \DB::raw('COUNT(*) as cnt'))->get(); 
         
       
 
@@ -277,13 +277,17 @@ class PageController extends Controller
       $staff_basic_data = DB::table('staff_data')->select("firstname", "lastname")->where(["staff_id" => $session_value])->get();
       $leave_pending_data = DB::table('leave_data')->where(["staff_id" => $session_value, "approval_status" => "[PENDING]"])->orderBy('date_of_leave', 'ASC')->get();
       $username = DB::table('user_account')->select("username")->where(["staff_id" => $session_value])->get();
-      $leave_data = DB::table('leave_data')->where(["approval_status" => "[ACCEPTED]"])->orWhere("approval_status", "[DECLINED]")->orderBy('date_of_request', 'DESC')->get();
+      $leave_data = DB::table('leave_data')->where(["staff_id" => $session_value])->where(["approval_status" => "[ACCEPTED]"])->orWhere("approval_status", "[DECLINED]")->orderBy('date_of_request', 'DESC')->get();
 
       
       $leave_type=DB::table('leave_type')->get(); 
 
+      $leave_count=DB::table('leave_data')->where(["approval_status" => "[ACCEPTED]"])->where(["staff_id" => $session_value])->select('type_of_leave', DB::raw('count(*) as total'))->groupBy('type_of_leave')->get();
 
-      return view("staff-dashboard-content/home-page-index")->with(['staff_basic_data' => $staff_basic_data,"leave_type"=>$leave_type,"leave_data" => $leave_data, "username" => $username, "leave_pending_data" => $leave_pending_data]);
+
+
+
+      return view("staff-dashboard-content/home-page-index")->with(['leave_count'=>$leave_count,'staff_basic_data' => $staff_basic_data,"leave_type"=>$leave_type,"leave_data" => $leave_data, "username" => $username, "leave_pending_data" => $leave_pending_data]);
 
     }else{
 
@@ -323,7 +327,7 @@ class PageController extends Controller
        $session_value = Session::get('Session_Value');
 
        $staff_basic_data = DB::table('staff_data')->select("firstname", "lastname")->where(["staff_id" => $session_value])->get();
-       $leave_data = DB::table('leave_data')->where(["approval_status" => "[ACCEPTED]"])->orWhere("approval_status", "[DECLINED]")->orderBy('date_of_request', 'DESC')->get();
+       $leave_data = DB::table('leave_data')->where(["staff_id" => $session_value])->where(["approval_status" => "[ACCEPTED]"])->orWhere("approval_status", "[DECLINED]")->orderBy('date_of_request', 'DESC')->get();
   
        $leave_type=DB::table('leave_type')->get(); 
 

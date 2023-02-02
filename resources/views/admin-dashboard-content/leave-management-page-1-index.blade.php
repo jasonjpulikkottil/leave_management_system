@@ -298,12 +298,35 @@
           <div class="card  mb-3">
             @if($data->approval_status =="[ACCEPTED]")
               <div class="card-header ">
-                <strong>{{$data->date_of_leave}} (Accepted)</strong>
+                <strong>{{$data->date_of_leave}} {{$data->staff_id}} 
+                  
+
+            @foreach($staff_basic_data as $keyy=>$object)
+             @if($keyy == $data->staff_id-1) 
+             {{ $object->firstname }}
+             @endif
+              @endforeach
+
+                
+                
+                (Accepted)</strong>
                 <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
               </div>
             @elseif($data->approval_status =="[DECLINED]")
               <div class="card-header ">
-                <strong>{{$data->date_of_leave}} (Declined)</strong>
+                <strong>{{$data->date_of_leave}}
+                  
+                
+                
+
+            @foreach($staff_basic_data as $keyy=>$object)
+             @if($keyy == $data->staff_id-1) 
+             {{ $object->firstname }}
+             @endif
+              @endforeach
+
+                
+                (Declined)</strong>
                 <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
               </div>
             @endif
@@ -313,7 +336,7 @@
          
 
             @foreach($leave_type as $keyy=>$object)
-             @if($keyy == $data->type_of_leave-2) 
+             @if($keyy == $data->type_of_leave-1) 
              {{ $object->leave_type_name }}
              @endif
               @endforeach

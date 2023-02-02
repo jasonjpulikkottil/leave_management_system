@@ -278,7 +278,7 @@ $val=$totalleave-count($leave_data)
              
 
               @foreach($leave_type as $keyy=>$object)
-             @if($keyy == $data->type_of_leave-2) 
+             @if($keyy == $data->type_of_leave-1) 
              {{ $object->leave_type_name }}
              @endif
               @endforeach
