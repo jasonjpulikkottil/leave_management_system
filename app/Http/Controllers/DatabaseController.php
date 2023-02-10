@@ -6,6 +6,9 @@ use Redirect;
 use Session;
 use DB;
 
+use Mail;
+use App\Mail\MailNotify;
+
 class DatabaseController extends Controller
 {
 
@@ -294,6 +297,26 @@ class DatabaseController extends Controller
      $staff_id  =  $request->staff_id;
      $username  =  $request->username;
      $password  =  $request->password;
+     
+     $staff_email_data = DB::table('staff_data')->where('staff_id',$staff_id)->select("email")->get();
+
+
+     $data = [
+      "subject"=>"New User Created",
+      "body"=>"Username:$username \n Password:$password"
+      ];
+    // MailNotify class that is extend from Mailable class.
+    try
+    {
+      Mail::to( $staff_email_data )->send(new MailNotify($data));
+      //return response()->json(['Great! Successfully send your mail']);
+    }
+    catch(Exception $e)
+    {
+      return response()->json(['Mail not sent']);
+    }
+
+
 
 
      if (DB::table('user_account')->where('staff_id', $staff_id)->doesntExist()) {
