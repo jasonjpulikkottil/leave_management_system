@@ -9,16 +9,6 @@ use App\Http\Controllers\Mail;
 
 use App\Http\Controllers\MailController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/',[PageController::class, 'ViewLoginPageController']);
 
@@ -79,11 +69,6 @@ Route::get('/delete-leave-pending-request-in-staff-account/{auto_id}',[DatabaseC
 Route::get('/view-my-leave-history-of-staff-account',[PageController::class, 'ViewMyLeaveHistoryPageOfStaffAccountController']);
 
 Route::post('/filter-search-leave-history-of-staff-account',[PageController::class, 'FilterSearchLeaveHistoryPageOfStaffAccountController']);
-
-
-
-
-
 
 
 Route::get('/sendmail', [MailController::class, 'index']);
