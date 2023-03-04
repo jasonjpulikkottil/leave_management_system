@@ -16,6 +16,7 @@ use Illuminate\Queue\Failed\DatabaseUuidFailedJobProvider;
 use Illuminate\Queue\Failed\DynamoDbFailedJobProvider;
 use Illuminate\Queue\Failed\NullFailedJobProvider;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 use Laravel\SerializableClosure\SerializableClosure;
 
@@ -200,7 +201,9 @@ class QueueServiceProvider extends ServiceProvider implements DeferrableProvider
                     $app['log']->withoutContext();
                 }
 
-                return $app->forgetScopedInstances();
+                $app->forgetScopedInstances();
+
+                return Facade::clearResolvedInstances();
             };
 
             return new Worker(
@@ -234,6 +237,11 @@ class QueueServiceProvider extends ServiceProvider implements DeferrableProvider
     {
         $this->app->singleton('queue.failer', function ($app) {
             $config = $app['config']['queue.failed'];
+
+            if (array_key_exists('driver', $config) &&
+                (is_null($config['driver']) || $config['driver'] === 'null')) {
+                return new NullFailedJobProvider;
+            }
 
             if (isset($config['driver']) && $config['driver'] === 'dynamodb') {
                 return $this->dynamoFailedJobProvider($config);

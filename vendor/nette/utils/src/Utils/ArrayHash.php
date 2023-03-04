@@ -21,9 +21,8 @@ class ArrayHash extends \stdClass implements \ArrayAccess, \Countable, \Iterator
 	/**
 	 * Transforms array to ArrayHash.
 	 * @param  array<T>  $array
-	 * @return static
 	 */
-	public static function from(array $array, bool $recursive = true)
+	public static function from(array $array, bool $recursive = true): static
 	{
 		$obj = new static;
 		foreach ($array as $key => $value) {
@@ -31,17 +30,20 @@ class ArrayHash extends \stdClass implements \ArrayAccess, \Countable, \Iterator
 				? static::from($value, true)
 				: $value;
 		}
+
 		return $obj;
 	}
 
 
 	/**
 	 * Returns an iterator over all items.
-	 * @return \RecursiveArrayIterator<array-key, T>
+	 * @return \Iterator<int|string, T>
 	 */
-	public function getIterator(): \RecursiveArrayIterator
+	public function &getIterator(): \Iterator
 	{
-		return new \RecursiveArrayIterator((array) $this);
+		foreach ((array) $this as $key => $foo) {
+			yield $key => $this->$key;
+		}
 	}
 
 
@@ -64,6 +66,7 @@ class ArrayHash extends \stdClass implements \ArrayAccess, \Countable, \Iterator
 		if (!is_scalar($key)) { // prevents null
 			throw new Nette\InvalidArgumentException(sprintf('Key must be either a string or an integer, %s given.', gettype($key)));
 		}
+
 		$this->$key = $value;
 	}
 
