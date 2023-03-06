@@ -7,7 +7,7 @@ A leave management system is a process within an organization that determines ho
 This leave management system has some basic features such as leave requests, leave tracking, approval and etc.
 
 ## Technologies
-- Laravel 9
+- Laravel 10
 - MySQL
 
 
